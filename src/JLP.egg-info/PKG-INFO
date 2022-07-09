@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: JLP
+Version: 0.1.dev1+g0b53948
+Summary: A low precision backend for JAX
+Home-page: https://github.com/paulestano/JLP
+Author: Paul Estano
+Author-email: paul.estano@inria.fr
+License: MIT
+Description-Content-Type: text/markdown
+Provides-Extra: test
+
+# JLP
+Low Precision Operators for JAX
