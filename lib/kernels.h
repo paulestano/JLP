@@ -17,8 +17,8 @@ struct JlpDescriptor {
  * Does not handle NaN, Inf, and denormal.
  * Stochastic Rounding.
  **/
-// void float_quantize_stochastic_cuda(cudaStream_t stream, void** buffers, const char* opaque,
-//                     std::size_t opaque_len);
+void float_quantize_stochastic_cuda(cudaStream_t stream, void** buffers, const char* opaque,
+                                    std::size_t opaque_len);
 
 /**
  * quantize a FloatTensor into a low bit-width floating point Tensor
@@ -27,11 +27,7 @@ struct JlpDescriptor {
  * Nearest Rounding.
  **/
 void float_quantize_nearest_cuda(cudaStream_t stream, void** buffers, const char* opaque,
-                    std::size_t opaque_len);
-
-__global__ void float_kernel_nearest(const float * a, float *o, int size,
-                                     int man_bits, int exp_bits,
-                                     bool subnormal_support, bool saturate);
+                                 std::size_t opaque_len);
 
 }  // namespace jlp
 

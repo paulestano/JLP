@@ -21,6 +21,7 @@ def read(*parts):
 # support.
 class CMakeBuildExt(build_ext):
     def build_extensions(self):
+        print("NTM!!!!")
         # First: configure CMake build
         import platform
         import sys
