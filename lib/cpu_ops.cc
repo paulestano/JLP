@@ -5,7 +5,7 @@
 #include "kepler.h"
 #include "pybind11_kernel_helpers.h"
 
-using namespace kepler_jax;
+using namespace jlp;
 
 namespace {
 

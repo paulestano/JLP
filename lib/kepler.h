@@ -10,7 +10,7 @@
 
 #include <cmath>
 
-namespace kepler_jax {
+namespace jlp {
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846264338327950288
@@ -41,6 +41,6 @@ KEPLER_JAX_INLINE_OR_DEVICE void compute_eccentric_anomaly(const T& mean_anom, c
   }
 }
 
-}  // namespace kepler_jax
+}  // namespace jlp
 
 #endif

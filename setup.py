@@ -57,12 +57,12 @@ class CMakeBuildExt(build_ext):
             "-DPython_LIBRARIES={}".format(cmake_python_library),
             "-DPython_INCLUDE_DIRS={}".format(cmake_python_include_dir),
             "-DCMAKE_BUILD_TYPE={}".format(
-                "Debug" if self.debug else "Release"
+                "Debug"
             ),
             "-DCMAKE_PREFIX_PATH={}".format(pybind11.get_cmake_dir()),
         ]
-        if os.environ.get("KEPLER_JAX_CUDA", "no").lower() == "yes":
-            cmake_args.append("-DKEPLER_JAX_CUDA=yes")
+        if os.environ.get("JLP_CUDA", "no").lower() == "yes":
+            cmake_args.append("-DJLP_CUDA=yes")
 
         os.makedirs(self.build_temp, exist_ok=True)
         subprocess.check_call(
@@ -88,18 +88,18 @@ class CMakeBuildExt(build_ext):
 
 extensions = [
     Extension(
-        "kepler_jax.cpu_ops",
-        ["src/kepler_jax/src/cpu_ops.cc"],
+        "jlp.cpu_ops",
+        ["src/jlp/src/cpu_ops.cc"],
     ),
 ]
 
-if os.environ.get("KEPLER_JAX_CUDA", "no").lower() == "yes":
+if os.environ.get("JLP_CUDA", "no").lower() == "yes":
     extensions.append(
         Extension(
-            "kepler_jax.gpu_ops",
+            "jlp.gpu_ops",
             [
-                "src/kepler_jax/src/gpu_ops.cc",
-                "src/kepler_jax/src/cuda_kernels.cc.cu",
+                "src/jlp/src/gpu_ops.cc",
+                "src/jlp/src/cuda_kernels.cc.cu",
             ],
         )
     )

@@ -1,4 +1,4 @@
-from kepler_jax import float_quantize_nearest_cuda
+from jlp import float_quantize_nearest_cuda
 import jax.numpy as jnp
 from jax import grad, jit, vmap
 from jax import random
@@ -11,5 +11,5 @@ size=3
 print("generating number")
 x = random.normal(key, (size, size), dtype=jnp.float32)
 print(x)
-qx = float_quantize_nearest_cuda(x, 1,2,False, False)
+qx = float_quantize_nearest_cuda(x, 2,3,True, True)
 print(abs(x-qx)/x)

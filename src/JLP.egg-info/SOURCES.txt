@@ -1,3 +1,4 @@
+CMakeLists.txt
 MANIFEST.in
 README.md
 pyproject.toml
@@ -15,6 +16,9 @@ src/JLP.egg-info/SOURCES.txt
 src/JLP.egg-info/dependency_links.txt
 src/JLP.egg-info/requires.txt
 src/JLP.egg-info/top_level.txt
-src/kepler_jax/__init__.py
-src/kepler_jax/kepler_jax.py
-src/kepler_jax/kepler_jax_version.py
+src/jlp/__init__.py
+src/jlp/jlp.py
+src/jlp/jlp_version.py
+src/jlp/kepler_jax_version.py
+tests/test_kepler_jax.py
+tests/test_quant.py
