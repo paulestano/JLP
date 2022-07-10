@@ -132,3 +132,4 @@ dmypy.json
 .clang-format
 .vscode/
 JLP/
+src/JLP.egg-info
