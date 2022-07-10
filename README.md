@@ -1,5 +1,5 @@
 # JLP
-Low Precision Operators for JAX
+Low Precision Operators and various quantizers for JAX
 ## Quickstart
 ```
 pip install -e .
